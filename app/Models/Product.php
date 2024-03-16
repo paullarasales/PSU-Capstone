@@ -16,4 +16,12 @@ class Product extends Model
         'stockQuantity',
         'category_id'
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function OrderDetail() {
+        return $this->hasMany(OrderDetail::class);
+    }
 }

@@ -14,4 +14,16 @@ class Order extends Model
         'orderDate',
         'totalAmount'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function OrderDetail() {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    public function payment() {
+        return $this->hasOne(Payment::class);
+    }
 }
