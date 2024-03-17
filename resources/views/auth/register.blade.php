@@ -2,11 +2,18 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- Name -->
+        <!-- First Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <x-input-label for="firtsname" :value="__('First Name')" />
+            <x-text-input id="firtsname" class="block mt-1 w-full" type="text" name="firtsname" :value="old('firtsname')" autofocus autocomplete="firstname" />
+            <x-input-error :messages="$errors->get('firtsname')" class="mt-2" />
+        </div>
+
+         <!-- Last Name -->
+         <div>
+            <x-input-label for="lastname" :value="__('Last Name')" />
+            <x-text-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" autofocus autocomplete="firstname" />
+            <x-input-error :messages="$errors->get('lastname')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
